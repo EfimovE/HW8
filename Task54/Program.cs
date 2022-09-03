@@ -37,7 +37,7 @@ int[,] SortDescendingElementRow (int [,] array2D)
         {
             int tmp = 0;
             bool isAction = false;
-            isAction = false;
+            // isAction = false;
             for (int k = 0; k < array2D.GetLength(1) - 1; k++) 
             {
                 if (array2D[i, k] < array2D[i, k + 1]) 
