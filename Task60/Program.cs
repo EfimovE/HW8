@@ -46,9 +46,9 @@ void PrintArray (int[]array) // метод для вывода в консоль
     Console.WriteLine($"{array[array.Length-1]} ]");
 }
 
-int[, ,] CreateMatrix3DInt (int [] array, int r) // Метод создания трехмерного массива.
+int[, ,] CreateMatrix3DInt (int [] array, int x, int y, int z) // Метод создания трехмерного массива.
 {
-    int[, ,] matrix = new int [r, r, r];
+    int[, ,] matrix = new int [x, y, z];
     int k = 0; 
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
@@ -83,9 +83,14 @@ void PrintMatrix3D (int [, ,] matrix3D)      // Метод для вывода �
         }
     }
 }
-Console.WriteLine("Введите размер Х, Y, Z для трехмерного массива и нажмите Enter.");
-int m = Convert.ToInt32(Console.ReadLine());
-int[]arr = CreateArrayInt (m*m*m + 1);
+Console.WriteLine("Введите размер Х для трехмерного массива и нажмите Enter.");
+int x = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите размер Y для трехмерного массива и нажмите Enter.");
+int y = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите размер Z для трехмерного массива и нажмите Enter.");
+int z = Convert.ToInt32(Console.ReadLine());
+
+int[]arr = CreateArrayInt (x*y*z + 1);
 PrintArray(arr);
-int[, ,] matr3D = CreateMatrix3DInt (arr, m);
+int[, ,] matr3D = CreateMatrix3DInt (arr, x, y, z);
 PrintMatrix3D (matr3D);
